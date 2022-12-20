@@ -62,6 +62,9 @@
       "steps": [
         {
           "exec": "tsc --build"
+        },
+        {
+          "exec": "tscp"
         }
       ]
     },
@@ -116,20 +119,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --updateSnapshot",
-          "receiveArgs": true
-        },
-        {
           "spawn": "eslint"
-        }
-      ]
-    },
-    "test:watch": {
-      "name": "test:watch",
-      "description": "Run jest in watch mode",
-      "steps": [
-        {
-          "exec": "jest --watch"
         }
       ]
     },
@@ -144,19 +134,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@arctarus/architect-k8s-crds,@arctarus/architect-k8s,@arctarus/architect,@kubernetes-models/crd-generate,@kubernetes-models/openapi-generate'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@arctarus/architect-k8s-crds,@arctarus/architect-k8s,@arctarus/architect,@kubernetes-models/crd-generate,@kubernetes-models/openapi-generate'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@arctarus/architect-k8s-crds,@arctarus/architect-k8s,@arctarus/architect,@kubernetes-models/crd-generate,@kubernetes-models/openapi-generate'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@arctarus/architect-k8s-crds,@arctarus/architect-k8s,@arctarus/architect,@kubernetes-models/crd-generate,@kubernetes-models/openapi-generate'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@arctarus/architect-k8s-crds,@arctarus/architect-k8s,@arctarus/architect,@kubernetes-models/crd-generate,@kubernetes-models/openapi-generate'"
         },
         {
           "exec": "yarn install --check-files"
@@ -177,7 +167,7 @@
       "description": "Watch & compile in the background",
       "steps": [
         {
-          "exec": "tsc --build -w"
+          "exec": "tsc --build -w & tscp -w"
         }
       ]
     }

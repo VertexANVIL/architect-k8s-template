@@ -189,7 +189,10 @@
       "error"
     ],
     "@typescript-eslint/no-floating-promises": [
-      "error"
+      "error",
+      {
+        "ignoreIIFE": true
+      }
     ],
     "no-return-await": [
       "off"

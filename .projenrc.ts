@@ -1,12 +1,21 @@
-import { typescript } from 'projen';
-const project = new typescript.TypeScriptAppProject({
+import * as k8s from '@arctarus/architect-k8s';
+
+const project = new k8s.ArchitectK8sTypeScriptApp({
+  // change this to your organisation's details
+  authorName: 'Arctarus Limited',
+  authorOrganization: true,
+  authorEmail: 'info@arctarus.co.uk',
+  authorUrl: 'https://www.arctarus.co.uk',
+
   defaultReleaseBranch: 'main',
-  name: 'architect-k8s-template',
+  name: '@arctarus/architect-k8s-template',
+  license: 'MIT',
+  repository: 'https://github.com/ArctarusLimited/architect-k8s-template.git',
+
   projenrcTs: true,
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  // disable tests
+  jest: false,
 });
+
 project.synth();
