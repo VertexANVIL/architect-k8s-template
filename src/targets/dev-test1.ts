@@ -1,4 +1,4 @@
-import { KubeTarget, ClusterFlavor } from '@arctarus/architect-k8s/lib';
+import { KubeTarget, ClusterFlavor } from '@arctarus/architect-k8s/src';
 import { SemVer } from 'semver';
 
 import * as components from './../components';

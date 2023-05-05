@@ -1,5 +1,5 @@
 import path from 'path';
-import { Sequencer } from '@arctarus/architect/lib';
+import { Sequencer } from '@arctarus/architect/src';
 
 async function main() {
   const sequencer = new Sequencer();
