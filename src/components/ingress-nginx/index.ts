@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { IComponentMatcher } from '@arctarus/architect';
+import { IComponentMatcher } from '@arctarus/architect/src';
 import * as k8s from '@arctarus/architect-k8s/src';
 import { IngressCapability, IngressFlavor } from '@arctarus/architect-k8s/src';
 
